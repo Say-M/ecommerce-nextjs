@@ -1,0 +1,63 @@
+@import '../variables';
+
+.product {
+  background: $white;
+  padding: 3rem 0;
+  .product_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $borderColor;
+    h2 {
+      border-bottom: 2px solid $teal;
+      margin-bottom: 0;
+      padding-bottom: 0.5rem;
+    }
+    .counter_wrapper {
+      display: flex;
+      align-items: center;
+      span:not(.count) {
+        margin-right: 1rem;
+      }
+      .count {
+        background: $red;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 300;
+        padding: 0.2rem 1rem;
+        &:last-child {
+          border-radius: 0 0.25rem 0.25rem 0;
+        }
+        &:nth-child(2) {
+          border-radius: 0.25rem 0 0 0.25rem;
+        }
+        strong {
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .product_item {
+    width: 250px;
+    .image {
+      width: 100%;
+      position: relative;
+      span {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    h6 {
+      text-transform: uppercase;
+    }
+    p {
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

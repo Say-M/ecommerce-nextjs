@@ -1,0 +1,41 @@
+.banner_wrapper {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+  .banner_image {
+    text-decoration: none;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .mini_banner {
+    margin-left: 1rem;
+    @media screen and (max-width: 992px) {
+    display: flex;
+      margin-left: 0;
+    }
+    .mini_banner_item {
+      width: 100%;
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+      @media screen and (max-width: 992px) {
+        width: 50%;
+        margin-bottom: 0 !important;
+        &:first-child {
+          margin-right: 0.5rem;
+        }
+        &:last-child {
+          margin-left: 0.5rem;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

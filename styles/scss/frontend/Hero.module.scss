@@ -1,0 +1,97 @@
+@import '../variables';
+
+.hero {
+  margin: 1.5rem 0;
+  padding-bottom: 2rem;
+  .hero_wrapper {
+    display: flex;
+    justify-content: space-between;
+    .category {
+      min-width: 260px;
+      margin-right: 1rem;
+      @media screen and (max-width: 992px) {
+        display: none;
+      }
+      .category_lists {
+        list-style: none;
+        margin-bottom: 0;
+        overflow: auto;
+        background: $white;
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: $mutedWhite;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: lighten($color: $black, $amount: 80);
+        }
+
+        & > li {
+          &:first-child {
+            background: $teal;
+            color: $white;
+            padding: 0.7rem 1rem;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+          }
+          & > span {
+            text-transform: capitalize;
+            padding: 0.6rem 1rem;
+            display: block;
+            border-bottom: 1px solid $borderColor;
+            color: $mutedFont;
+            cursor: pointer;
+            &:hover,
+            &.active {
+              color: $fontColor;
+              font-weight: 500;
+              background: $mutedWhite;
+            }
+            &.active {
+              & + ul {
+                border-bottom: 1px solid $borderColor;
+              }
+            }
+          }
+          &:last-child {
+            & > span {
+              border-bottom: none;
+            }
+          }
+          & > ul {
+            list-style: none;
+            margin-bottom: 0;
+            overflow: hidden;
+            transition: 0.25s ease-in-out;
+            li {
+              a {
+                text-decoration: none;
+                text-transform: capitalize;
+                padding: 0.6rem 1rem;
+                padding-left: 1.8rem;
+                display: block;
+                color: $mutedFont;
+                &:hover {
+                  color: $fontColor;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .banner {
+      width: calc(100% - calc(260px + 1rem));
+      @media screen and (max-width: 992px) {
+        width: 100%;
+      }
+    }
+  }
+}
